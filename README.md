@@ -1,7 +1,8 @@
-This is my site of some of my projects.
-
-
-
+<------------------------------------------------------------------------->
+                  This is my website for some of my projects.                 
+<------------------------------------------------------------------------->
+=                                                                         =
+˅-------------------------------------------------------------------------˅
 Notice for ball2ball.html:
 
 Parts of this script are from the TurboWarp Packager https://packager.turbowarp.org/, licensed as follows:
@@ -26,3 +27,4 @@ Third-party components used in this project...
 2) Scratch
    - Copyright (c) 2016, Massachusetts Institute of Technology
    - License: BSD 3-clause style
+^-------------------------------------------------------------------------^
