@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+<link rel="icon" href="favicon.png" type="image/x-icon">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Projects — Mr_Cat</title>
+  <style>
+    :root{
+      --bg:#000;
+      --text:#33ff66; /* bright green */
+      --muted:#8fd8c8; /* soft cyan for secondary text */
+      --link:#66d9ef; /* link cyan */
+      --accent:#ff5c5c; /* red accent for small highlights */
+    }
+    html,body{height:100%;}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--text);
+      font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", "Courier New", monospace;
+      -webkit-font-smoothing:antialiased;
+      display:flex;
+      align-items:flex-start;
+      justify-content:center;
+      padding:48px 16px;
+    }
+    .wrap{
+      max-width:860px;
+      width:100%;
+      box-sizing:border-box;
+    }
+    header h1{
+      margin:0 0 6px 0;
+      font-size:28px;
+      letter-spacing:0.4px;
+    }
+    header p{margin:0 0 18px 0;color:var(--muted)}
+    #counter{
+      display:inline-block;
+      background:rgba(255,255,255,0.02);
+      padding:4px 8px;
+      border-radius:6px;
+      color:var(--muted);
+      font-size:13px;
+      margin-left:8px;
+    }
+    nav{
+      background:rgba(255,255,255,0.02);
+      padding:18px;
+      border-radius:8px;
+      box-shadow:0 6px 18px rgba(0,0,0,0.6);
+    }
+    ul{margin:0;padding:0 0 0 18px}
+    li{margin:8px 0}
+    a{
+      color:var(--link);
+      text-decoration:none;
+      font-weight:600;
+    }
+    a:visited{color:#7fb8d8}
+    a:focus, a:hover{text-decoration:underline}
+    .meta{color:var(--muted);font-size:13px;margin-left:6px}
+    footer{margin-top:18px;color:var(--muted);font-size:13px}
+    .hint{color:var(--accent)}
+    /* small terminal-like prompt effect */
+    .prompt:before{
+      content: ">";
+      color:var(--muted);
+      display:inline-block;
+      width:20px;
+      margin-right:6px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>My Projects <span id="counter" aria-live="polite">0 pages</span></h1>
+      <p class="meta">A simple, terminal-style index of the pages I've made. Click any project to open it.</p>
+    </header>
+
+    <nav>
+      <ul id="projects">
+        <li class="prompt"><a href="ball2ball.html">ball2ball.html</a><span class="meta"> — small physics/game demo</span></li>
+        <!-- Add more projects below as <li class="prompt"><a href="anotherpage.html">anotherpage.html</a><span class="meta"> — description</span></li> -->
+      </ul>
+    </nav>
+
+    <footer>
+    </footer>
+  </div>
+
+  <script>
+    function updateCounter(){
+      const count = document.querySelectorAll('#projects li').length;
+      const el = document.getElementById('counter');
+      el.textContent = count + (count === 1 ? ' page' : ' pages');
+    }
+    // run on load
+    updateCounter();
+    // optional: observe changes so if you edit the file in-browser the count updates
+    const obs = new MutationObserver(updateCounter);
+    obs.observe(document.getElementById('projects'),{childList:true,subtree:false});
+  </script>
+</body>
+</html>
